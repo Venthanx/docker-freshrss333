@@ -12,7 +12,7 @@ jobs:
       - 
         run: 
           command: "docker build --build-arg FRESHRSS_VERSION=1.19.2 ."
-          name: "Test Build"
+          name: "Update Build"
     working_directory: ~/app
 version: 2.1
 workflows: 
