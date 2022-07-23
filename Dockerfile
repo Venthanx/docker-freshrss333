@@ -10,8 +10,8 @@ RUN apk add --no-cache wget unzip \
     && chown -R www-data:www-data /app
 
 RUN apk add --no-cache gmp-dev \
-    && docker-php-ext-install opcache gmp \
-	&& docker-php-ext-enable opcache \
+    && docker-php-ext-install opcache gmp intl zip \
+	&& docker-php-ext-enable opcache intl zip \
     && apk add --no-cache gmp
 
 RUN php -m
