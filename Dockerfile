@@ -14,6 +14,9 @@ RUN apk add --no-cache gmp gmp-dev icu icu-dev libzip-dev libzip \
 	&& docker-php-ext-enable opcache gmp intl zip \
     && apk add --no-cache gmp icu libzip-dev libzip
 
+RUN pecl install apcu \
+    && docker-php-ext-enable apcu
+
 RUN php -m
 
 WORKDIR /app
