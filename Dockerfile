@@ -17,7 +17,8 @@ RUN apk add --no-cache gmp gmp-dev icu icu-dev libzip-dev libzip \
 RUN apk add --update --no-cache --virtual .build-dependencies $PHPIZE_DEPS \ 
     && pecl install apcu \
     && docker-php-ext-enable apcu \
-    && apk del autoconf
+    && pecl clear-cache \
+    && apk del .build-dependencies
 
 RUN php -m
 
